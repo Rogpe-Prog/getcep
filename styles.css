@@ -106,6 +106,15 @@ html, body {
     margin-right: 10px;
 }
 
+.list-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card-list-item {
     background-color: #333;
     color: #fff;
@@ -115,13 +124,6 @@ html, body {
     align-items: center;
     border-radius: 8px;
     padding: 20px;
-}
-
-.list-container{
-    width: 100%;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
 }
 
 .card-list-item h3 {
