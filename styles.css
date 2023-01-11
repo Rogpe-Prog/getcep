@@ -79,7 +79,7 @@ html, body {
 }
 
 .form-input:disabled {
-    
+    color: #fff;
 }
 
 .btn-container {
