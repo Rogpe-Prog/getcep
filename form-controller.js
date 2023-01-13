@@ -70,7 +70,19 @@ async function handleInputCepChange(event) {
 
 async function handleBtnSaveClick(event) {
     event.preventDefault();
-    listController.addCard(state.address);
+
+    const errors = addressService.getErrors(state.address);
+
+    const keys = Object.keys(errors);
+    if (keys.length > 0) {
+        for (let i =  0; i < keys.length; i++){
+            setFormError(keys[i], errors[keys[i]]);
+        }
+    } else {
+        listController.addCard(state.address);
+        clearForm();
+    }
+   
 }
 
 function handleInputNumberChange(event) {
@@ -94,6 +106,8 @@ function clearForm() {
 
     setFormError("cep", "");
     setFormError("number", "");
+
+    state.address = new Address();
 
     state.inputCep.focus();
 }
